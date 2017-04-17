@@ -1,0 +1,1938 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/pugjs/jade-lint#readme">jade-lint (v2.1.0)</a>
+</h1>
+<h4>An unopinionated and configurable linter and style checker for Jade</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jade-lint">module jade-lint</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade-lint">
+            function <span class="apidocSignatureSpan"></span>jade-lint
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.errors">
+            function <span class="apidocSignatureSpan">jade-lint.</span>errors
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file">
+            function <span class="apidocSignatureSpan">jade-lint.</span>jade_file
+            <span class="apidocSignatureSpan">(filename, source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.linter">
+            function <span class="apidocSignatureSpan">jade-lint.</span>linter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.toString">
+            function <span class="apidocSignatureSpan">jade-lint.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jade-lint.</span>config_file</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jade-lint.</span>errors.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jade-lint.</span>jade_file.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jade-lint.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jade-lint.config_file">module jade-lint.config_file</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.config_file.getContent">
+            function <span class="apidocSignatureSpan">jade-lint.config_file.</span>getContent
+            <span class="apidocSignatureSpan">(config, directory)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.config_file.getReporter">
+            function <span class="apidocSignatureSpan">jade-lint.config_file.</span>getReporter
+            <span class="apidocSignatureSpan">(reporter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.config_file.load">
+            function <span class="apidocSignatureSpan">jade-lint.config_file.</span>load
+            <span class="apidocSignatureSpan">(config, cwd)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.config_file.loadFromHomeDirectory">
+            function <span class="apidocSignatureSpan">jade-lint.config_file.</span>loadFromHomeDirectory
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jade-lint.errors">module jade-lint.errors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.errors.errors">
+            function <span class="apidocSignatureSpan">jade-lint.</span>errors
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jade-lint.errors.prototype">module jade-lint.errors.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.errors.prototype.add">
+            function <span class="apidocSignatureSpan">jade-lint.errors.prototype.</span>add
+            <span class="apidocSignatureSpan">(message, line, column)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.errors.prototype.addParseError">
+            function <span class="apidocSignatureSpan">jade-lint.errors.prototype.</span>addParseError
+            <span class="apidocSignatureSpan">(error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.errors.prototype.getErrors">
+            function <span class="apidocSignatureSpan">jade-lint.errors.prototype.</span>getErrors
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.errors.prototype.setCurrentRule">
+            function <span class="apidocSignatureSpan">jade-lint.errors.prototype.</span>setCurrentRule
+            <span class="apidocSignatureSpan">(rule)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jade-lint.jade_file">module jade-lint.jade_file</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.jade_file">
+            function <span class="apidocSignatureSpan">jade-lint.</span>jade_file
+            <span class="apidocSignatureSpan">(filename, source)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jade-lint.jade_file.prototype">module jade-lint.jade_file.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.addErrorForAllLinesByFilter">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>addErrorForAllLinesByFilter
+            <span class="apidocSignatureSpan">(filter, regex, isMatch, errors, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.addErrorForAllLinesByType">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>addErrorForAllLinesByType
+            <span class="apidocSignatureSpan">(type, regex, isMatch, errors, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.addErrorForAllStaticAttributeValues">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>addErrorForAllStaticAttributeValues
+            <span class="apidocSignatureSpan">(name, errors, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.addErrorForAllTokensByFilter">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>addErrorForAllTokensByFilter
+            <span class="apidocSignatureSpan">(filter, errors, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.addErrorForAllTokensByType">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>addErrorForAllTokensByType
+            <span class="apidocSignatureSpan">(type, errors, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.addErrorForIncorrectSpacesAroundType">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>addErrorForIncorrectSpacesAroundType
+            <span class="apidocSignatureSpan">(options, errors)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.addErrorForIncorrectTokenTypeOrder">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>addErrorForIncorrectTokenTypeOrder
+            <span class="apidocSignatureSpan">(typeA, typeB, boundaryTypes, errors, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.addErrorForLine">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>addErrorForLine
+            <span class="apidocSignatureSpan">(lineNumber, regex, isMatch, errors, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.addErrorForMatch">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>addErrorForMatch
+            <span class="apidocSignatureSpan">(a, b, isMatch, errors, message, lineNumber, columnNumber)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.getCharacter">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getCharacter
+            <span class="apidocSignatureSpan">(line, column)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.getFilename">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getFilename
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.getFirstToken">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getFirstToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.getLastToken">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getLastToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.getLine">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getLine
+            <span class="apidocSignatureSpan">(line)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.getLineBreaks">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getLineBreaks
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.getLines">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getLines
+            <span class="apidocSignatureSpan">(start, end)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.getNextTokenByType">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getNextTokenByType
+            <span class="apidocSignatureSpan">(current, type, direction)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.getParseErrors">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getParseErrors
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.getPreviousTokenByType">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getPreviousTokenByType
+            <span class="apidocSignatureSpan">(current, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.getSource">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getSource
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.getSourceBetweenTokens">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getSourceBetweenTokens
+            <span class="apidocSignatureSpan">(start, end)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.getToken">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getToken
+            <span class="apidocSignatureSpan">(index)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.getTokens">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getTokens
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.getTokensByFilter">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getTokensByFilter
+            <span class="apidocSignatureSpan">(filter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.iterateTokensByFilter">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>iterateTokensByFilter
+            <span class="apidocSignatureSpan">(filter, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.jade_file.prototype.iterateTokensByType">
+            function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>iterateTokensByType
+            <span class="apidocSignatureSpan">(type, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jade-lint.toString">module jade-lint.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.toString.toString">
+            function <span class="apidocSignatureSpan">jade-lint.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jade-lint.utils">module jade-lint.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.utils.createTypeArray">
+            function <span class="apidocSignatureSpan">jade-lint.utils.</span>createTypeArray
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.utils.ownProperty">
+            function <span class="apidocSignatureSpan">jade-lint.utils.</span>ownProperty
+            <span class="apidocSignatureSpan">(obj, propertyName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jade-lint.utils.validateTrueOptions">
+            function <span class="apidocSignatureSpan">jade-lint.utils.</span>validateTrueOptions
+            <span class="apidocSignatureSpan">(name, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jade-lint.utils.</span>htmlTagBoundaryTypes</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jade-lint" id="apidoc.module.jade-lint">module jade-lint</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade-lint" id="apidoc.element.jade-lint.jade-lint">
+        function <span class="apidocSignatureSpan"></span>jade-lint
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">jade-lint = function () {
+
+  this._basePath = '.'
+  this._excludedFileMasks = [ 'node_modules/**' ]
+  this._excludedFileMatchers = []
+  this._fileExtensions = [ '.jade' ]
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.errors" id="apidoc.element.jade-lint.errors">
+        function <span class="apidocSignatureSpan">jade-lint.</span>errors
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">errors = function (file) {
+
+  this._errors = []
+  this._file = file
+  this._currentRule = ''
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file" id="apidoc.element.jade-lint.jade_file">
+        function <span class="apidocSignatureSpan">jade-lint.</span>jade_file
+        <span class="apidocSignatureSpan">(filename, source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">jade_file = function (filename, source) {
+
+  this._parseErrors = []
+  this._tokens = []
+  this._filename = filename
+  this._source = source
+  this._lines = this._source.split(/\r\n|\r|\n/)
+  this._lineBreaks = this._source.match(/\r\n|\r|\n/g)
+
+  try {
+    this._tokens = jadeLexer(this._source, this._filename)
+  } catch (e) {
+    this._parseErrors.push(e)
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.linter" id="apidoc.element.jade-lint.linter">
+        function <span class="apidocSignatureSpan">jade-lint.</span>linter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">linter = function () {
+
+  this._basePath = '.'
+  this._excludedFileMasks = [ 'node_modules/**' ]
+  this._excludedFileMatchers = []
+  this._fileExtensions = [ '.jade' ]
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.toString" id="apidoc.element.jade-lint.toString">
+        function <span class="apidocSignatureSpan">jade-lint.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+exports.getReporter = function (reporter) {
+
+var writerPath
+  , writer
+
+if (reporter) {
+  reporter = reporter.<span class="apidocCodeKeywordSpan">toString</span>()
+  writerPath = path.resolve(process.cwd(), reporter)
+
+  if (!fs.existsSync(writerPath)) {
+    writerPath = path.resolve(__dirname, './reporters/' + reporter)
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jade-lint.config_file" id="apidoc.module.jade-lint.config_file">module jade-lint.config_file</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.config_file.getContent" id="apidoc.element.jade-lint.config_file.getContent">
+        function <span class="apidocSignatureSpan">jade-lint.config_file.</span>getContent
+        <span class="apidocSignatureSpan">(config, directory)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getContent = function (config, directory) {
+
+  if (!config) {
+    return
+  }
+
+  var configPath = path.resolve(directory, config)
+    , ext
+    , content
+
+  config = path.basename(config)
+
+  if (fs.existsSync(configPath)) {
+    ext = path.extname(configPath)
+
+    if (ext === '.js' || ext === '.json') {
+      content = require(configPath)
+    } else {
+      content = JSON.parse(fs.readFileSync(configPath, 'utf8'))
+    }
+
+    Object.defineProperty(content, 'configPath', {
+      value: configPath
+    })
+  }
+
+  return content &amp;&amp; config === 'package.json' ? content.jadeLintConfig : content
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+exports.load = function (config, cwd) {
+
+var content
+  , directory = cwd || process.cwd()
+
+if (config) {
+  return this.<span class="apidocCodeKeywordSpan">getContent</span>(config, directory)
+}
+
+content = this.getContent(
+  findup(configs, { nocase: true, cwd: directory }, function (configPath) {
+    if (path.basename(configPath) === 'package.json') {
+      return !!this.getContent(configPath)
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.config_file.getReporter" id="apidoc.element.jade-lint.config_file.getReporter">
+        function <span class="apidocSignatureSpan">jade-lint.config_file.</span>getReporter
+        <span class="apidocSignatureSpan">(reporter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getReporter = function (reporter) {
+
+  var writerPath
+    , writer
+
+  if (reporter) {
+    reporter = reporter.toString()
+    writerPath = path.resolve(process.cwd(), reporter)
+
+    if (!fs.existsSync(writerPath)) {
+      writerPath = path.resolve(__dirname, './reporters/' + reporter)
+    }
+  }
+
+  try {
+    writer = require(writerPath)
+  } catch (e) {
+    writer = null
+  }
+
+  if (!writer) {
+    try {
+      writer = require(reporter)
+    } catch (e) {}
+  }
+
+  return { path: writerPath, writer: writer }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.config_file.load" id="apidoc.element.jade-lint.config_file.load">
+        function <span class="apidocSignatureSpan">jade-lint.config_file.</span>load
+        <span class="apidocSignatureSpan">(config, cwd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (config, cwd) {
+
+  var content
+    , directory = cwd || process.cwd()
+
+  if (config) {
+    return this.getContent(config, directory)
+  }
+
+  content = this.getContent(
+    findup(configs, { nocase: true, cwd: directory }, function (configPath) {
+      if (path.basename(configPath) === 'package.json') {
+        return !!this.getContent(configPath)
+      }
+
+      return true
+    }.bind(this))
+  )
+
+  if (content) {
+    return content
+  }
+
+  return this.loadFromHomeDirectory()
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.config_file.loadFromHomeDirectory" id="apidoc.element.jade-lint.config_file.loadFromHomeDirectory">
+        function <span class="apidocSignatureSpan">jade-lint.config_file.</span>loadFromHomeDirectory
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadFromHomeDirectory = function () {
+
+  var content
+    , directoryArr = [ process.env.USERPROFILE, process.env.HOMEPATH, process.env.HOME ]
+    , i
+    , dirLen
+    , j
+    , len
+
+  for (i = 0, dirLen = directoryArr.length; i &lt; dirLen; i++) {
+    if (!directoryArr[i]) {
+      continue
+    }
+
+    for (j = 0, len = configs.length; j &lt; len; j++) {
+      content = this.getContent(configs[j], directoryArr[i])
+
+<span class="apidocCodeCommentSpan">      /* istanbul ignore next */
+</span>      if (content) {
+        return content
+      }
+    }
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }.bind(this))
+)
+
+if (content) {
+  return content
+}
+
+return this.<span class="apidocCodeKeywordSpan">loadFromHomeDirectory</span>()
+
+}
+
+exports.loadFromHomeDirectory = function () {
+
+var content
+  , directoryArr = [ process.env.USERPROFILE, process.env.HOMEPATH, process.env.HOME ]
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jade-lint.errors" id="apidoc.module.jade-lint.errors">module jade-lint.errors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.errors.errors" id="apidoc.element.jade-lint.errors.errors">
+        function <span class="apidocSignatureSpan">jade-lint.</span>errors
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">errors = function (file) {
+
+  this._errors = []
+  this._file = file
+  this._currentRule = ''
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jade-lint.errors.prototype" id="apidoc.module.jade-lint.errors.prototype">module jade-lint.errors.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.errors.prototype.add" id="apidoc.element.jade-lint.errors.prototype.add">
+        function <span class="apidocSignatureSpan">jade-lint.errors.prototype.</span>add
+        <span class="apidocSignatureSpan">(message, line, column)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (message, line, column) {
+
+  this._errors.push(error(this._currentRule, message
+    , { filename: this._file.getFilename()
+      , src: this._file.getSource().replace(/\r\n|\r/g, '\n')
+      , line: line
+      , column: column
+      }
+    ))
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+          { terse: true
+          , format: 'html'
+          , runtime: function (name) { return name }
+          }
+        , compiled = jadeAttribute([ token ], options)
+
+      if (!/^attr\(.*\)$/g.exec(compiled)) {
+        errors.<span class="apidocCodeKeywordSpan">add</span>(message, token.line, token.col)
+      }
+    })
+
+  }
+
+, addErrorForAllTokensByFilter: function (filter, errors, message) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.errors.prototype.addParseError" id="apidoc.element.jade-lint.errors.prototype.addParseError">
+        function <span class="apidocSignatureSpan">jade-lint.errors.prototype.</span>addParseError
+        <span class="apidocSignatureSpan">(error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addParseError = function (error) {
+
+   this._errors.push(error)
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.errors.prototype.getErrors" id="apidoc.element.jade-lint.errors.prototype.getErrors">
+        function <span class="apidocSignatureSpan">jade-lint.errors.prototype.</span>getErrors
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getErrors = function () {
+
+  return this._errors
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.errors.prototype.setCurrentRule" id="apidoc.element.jade-lint.errors.prototype.setCurrentRule">
+        function <span class="apidocSignatureSpan">jade-lint.errors.prototype.</span>setCurrentRule
+        <span class="apidocSignatureSpan">(rule)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setCurrentRule = function (rule) {
+
+  this._currentRule = 'LINT_' + rule.toUpperCase()
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jade-lint.jade_file" id="apidoc.module.jade-lint.jade_file">module jade-lint.jade_file</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.jade_file" id="apidoc.element.jade-lint.jade_file.jade_file">
+        function <span class="apidocSignatureSpan">jade-lint.</span>jade_file
+        <span class="apidocSignatureSpan">(filename, source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">jade_file = function (filename, source) {
+
+  this._parseErrors = []
+  this._tokens = []
+  this._filename = filename
+  this._source = source
+  this._lines = this._source.split(/\r\n|\r|\n/)
+  this._lineBreaks = this._source.match(/\r\n|\r|\n/g)
+
+  try {
+    this._tokens = jadeLexer(this._source, this._filename)
+  } catch (e) {
+    this._parseErrors.push(e)
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jade-lint.jade_file.prototype" id="apidoc.module.jade-lint.jade_file.prototype">module jade-lint.jade_file.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.addErrorForAllLinesByFilter" id="apidoc.element.jade-lint.jade_file.prototype.addErrorForAllLinesByFilter">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>addErrorForAllLinesByFilter
+        <span class="apidocSignatureSpan">(filter, regex, isMatch, errors, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addErrorForAllLinesByFilter = function (filter, regex, isMatch, errors, message) {
+
+  var _this = this
+
+  _this.iterateTokensByFilter(filter, function (token) {
+    _this.addErrorForLine(token.line, regex, isMatch, errors, message)
+  })
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  }
+
+, addErrorForAllLinesByType: function (type, regex, isMatch, errors, message) {
+
+    type = utils.createTypeArray(type)
+
+    this.<span class="apidocCodeKeywordSpan">addErrorForAllLinesByFilter</span>(function (token) {
+      return type.indexOf(token.type) !== -1
+    }, regex, isMatch, errors, message)
+
+  }
+
+, addErrorForAllStaticAttributeValues: function (name, errors, message) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.addErrorForAllLinesByType" id="apidoc.element.jade-lint.jade_file.prototype.addErrorForAllLinesByType">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>addErrorForAllLinesByType
+        <span class="apidocSignatureSpan">(type, regex, isMatch, errors, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addErrorForAllLinesByType = function (type, regex, isMatch, errors, message) {
+
+  type = utils.createTypeArray(type)
+
+  this.addErrorForAllLinesByFilter(function (token) {
+    return type.indexOf(token.type) !== -1
+  }, regex, isMatch, errors, message)
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.addErrorForAllStaticAttributeValues" id="apidoc.element.jade-lint.jade_file.prototype.addErrorForAllStaticAttributeValues">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>addErrorForAllStaticAttributeValues
+        <span class="apidocSignatureSpan">(name, errors, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addErrorForAllStaticAttributeValues = function (name, errors, message) {
+
+  this.iterateTokensByFilter(function (token) {
+    return token.type === 'attribute' &amp;&amp; token.name.toLowerCase() === name.toLowerCase()
+  }, function (token) {
+    var options =
+        { terse: true
+        , format: 'html'
+        , runtime: function (name) { return name }
+        }
+      , compiled = jadeAttribute([ token ], options)
+
+    if (!/^attr\(.*\)$/g.exec(compiled)) {
+      errors.add(message, token.line, token.col)
+    }
+  })
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.addErrorForAllTokensByFilter" id="apidoc.element.jade-lint.jade_file.prototype.addErrorForAllTokensByFilter">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>addErrorForAllTokensByFilter
+        <span class="apidocSignatureSpan">(filter, errors, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addErrorForAllTokensByFilter = function (filter, errors, message) {
+
+  this.iterateTokensByFilter(filter, function (token) {
+    errors.add(message, token.line, token.col)
+  })
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.addErrorForAllTokensByType" id="apidoc.element.jade-lint.jade_file.prototype.addErrorForAllTokensByType">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>addErrorForAllTokensByType
+        <span class="apidocSignatureSpan">(type, errors, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addErrorForAllTokensByType = function (type, errors, message) {
+
+  this.iterateTokensByType(type, function (token) {
+    errors.add(message, token.line, token.col)
+  })
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.addErrorForIncorrectSpacesAroundType" id="apidoc.element.jade-lint.jade_file.prototype.addErrorForIncorrectSpacesAroundType">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>addErrorForIncorrectSpacesAroundType
+        <span class="apidocSignatureSpan">(options, errors)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addErrorForIncorrectSpacesAroundType = function (options, errors) {
+
+  var _this = this
+
+  _this.iterateTokensByType(options.type, function (token) {
+    var separator = ' '
+      , match
+      , columnNumber
+      , errorMessage = [ options.required ? 'One space required' : 'Illegal space' ]
+
+    switch (options.position) {
+      case 'before':
+        columnNumber = token.col - 1
+        errorMessage.push('before')
+        break
+      case 'after':
+        columnNumber = token.col + 1
+        errorMessage.push('after')
+        break
+    }
+
+    errorMessage.push(options.description)
+
+    match = _this.getCharacter(token.line, columnNumber)
+
+    _this.addErrorForMatch(match, separator, !options.required, errors
+      , errorMessage, token.line, columnNumber)
+  })
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.addErrorForIncorrectTokenTypeOrder" id="apidoc.element.jade-lint.jade_file.prototype.addErrorForIncorrectTokenTypeOrder">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>addErrorForIncorrectTokenTypeOrder
+        <span class="apidocSignatureSpan">(typeA, typeB, boundaryTypes, errors, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addErrorForIncorrectTokenTypeOrder = function (typeA, typeB, boundaryTypes, errors, message) {
+
+  typeA = utils.createTypeArray(typeA)
+
+  var _this = this
+
+  _this.iterateTokensByType(typeB, function (token) {
+    var current = token
+      , currentIndex = current._index
+      , start = _this.getPreviousTokenByType(token, boundaryTypes) || current
+      , startIndex = start._index
+      , end = _this.getNextTokenByType(token, boundaryTypes)
+      , endIndex = end._index
+
+    _this.iterateTokensByFilter(function (token) {
+      return typeA.indexOf(token.type) !== -1 &amp;&amp;
+        token._index &gt; currentIndex &amp;&amp;
+        token._index &gt;= startIndex &amp;&amp;
+        token._index &lt;= endIndex
+    }, function (token) {
+      errors.add(message, token.line, token.col)
+    })
+  })
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.addErrorForLine" id="apidoc.element.jade-lint.jade_file.prototype.addErrorForLine">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>addErrorForLine
+        <span class="apidocSignatureSpan">(lineNumber, regex, isMatch, errors, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addErrorForLine = function (lineNumber, regex, isMatch, errors, message) {
+
+  var line = this.getLine(lineNumber)
+
+  if (regex.test(line) === isMatch) {
+    errors.add(message, lineNumber)
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+JadeFile.prototype =
+
+  { addErrorForAllLinesByFilter: function (filter, regex, isMatch, errors, message) {
+
+var _this = this
+
+_this.iterateTokensByFilter(filter, function (token) {
+  _this.<span class="apidocCodeKeywordSpan">addErrorForLine</span>(token.line, regex, isMatch, errors, message)
+})
+
+    }
+
+  , addErrorForAllLinesByType: function (type, regex, isMatch, errors, message) {
+
+type = utils.createTypeArray(type)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.addErrorForMatch" id="apidoc.element.jade-lint.jade_file.prototype.addErrorForMatch">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>addErrorForMatch
+        <span class="apidocSignatureSpan">(a, b, isMatch, errors, message, lineNumber, columnNumber)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addErrorForMatch = function (a, b, isMatch, errors, message, lineNumber, columnNumber) {
+
+  if ((a === b) === isMatch) {
+    errors.add(message, lineNumber, columnNumber)
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+//         , openingColumn
+//         , closingColumn
+
+//       while ((match = regex.exec(line)) !== null) {
+//         openingColumn = match[0].indexOf(match[1]) + 1
+//         closingColumn = match[0].lastIndexOf(match[5]) + 1
+
+//         this.<span class="apidocCodeKeywordSpan">addErrorForMatch</span>(match[2], separator, !isRequired, errors
+//           , errorPrefix + ' after opening bracket', lineNumber, openingColumn)
+//         this.addErrorForMatch(match[4], separator, !isRequired, errors
+//           , errorPrefix + ' before closing bracket', lineNumber, closingColumn)
+//       }
+
+//   }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.getCharacter" id="apidoc.element.jade-lint.jade_file.prototype.getCharacter">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getCharacter
+        <span class="apidocSignatureSpan">(line, column)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCharacter = function (line, column) {
+
+  return this.getLine(line).charAt(column - 1)
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        columnNumber = token.col + 1
+        errorMessage.push('after')
+        break
+    }
+
+    errorMessage.push(options.description)
+
+    match = _this.<span class="apidocCodeKeywordSpan">getCharacter</span>(token.line, columnNumber)
+
+    _this.addErrorForMatch(match, separator, !options.required, errors
+      , errorMessage, token.line, columnNumber)
+  })
+
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.getFilename" id="apidoc.element.jade-lint.jade_file.prototype.getFilename">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getFilename
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFilename = function () {
+
+  return this._filename
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+}
+
+Errors.prototype =
+  { add: function (message, line, column) {
+
+  this._errors.push(error(this._currentRule, message
+    , { filename: this._file.<span class="apidocCodeKeywordSpan">getFilename</span>()
+      , src: this._file.getSource().replace(/\r\n|\r/g, '\n')
+      , line: line
+      , column: column
+      }
+    ))
+
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.getFirstToken" id="apidoc.element.jade-lint.jade_file.prototype.getFirstToken">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getFirstToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFirstToken = function () {
+
+  return this.getToken(0)
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.getLastToken" id="apidoc.element.jade-lint.jade_file.prototype.getLastToken">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getLastToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLastToken = function () {
+
+  var tokens = this.getTokens()
+
+  return tokens[tokens.length - 1]
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.getLine" id="apidoc.element.jade-lint.jade_file.prototype.getLine">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getLine
+        <span class="apidocSignatureSpan">(line)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLine = function (line) {
+
+  return this.getLines(line, line)[0]
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    })
+
+  }
+
+// , addErrorForIncorrectSpacesInsideBrackets: function (brackets, token, isRequired, errors) {
+
+//     var lineNumber = token.line
+//         , line = this.<span class="apidocCodeKeywordSpan">getLine</span>(lineNumber)
+//         , regex = new RegExp('(\\' + brackets[0] + ')(\\s*)\\S([^(]*|.*)\\S(\\s*)(\\' + brackets[1] + '
+;)', 'g')
+//         , match
+//         , separator = ' '
+//         , errorPrefix = isRequired ? 'One space required' : 'Illegal space'
+//         , openingColumn
+//         , closingColumn
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.getLineBreaks" id="apidoc.element.jade-lint.jade_file.prototype.getLineBreaks">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getLineBreaks
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLineBreaks = function () {
+
+  return this._lineBreaks
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.getLines" id="apidoc.element.jade-lint.jade_file.prototype.getLines">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getLines
+        <span class="apidocSignatureSpan">(start, end)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLines = function (start, end) {
+
+  start = isNaN(start) ? 0 : start - 1
+  end = isNaN(end) ? this._lines.length : end
+
+  return this._lines.slice(start, end)
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return tokens[tokens.length - 1]
+
+    }
+
+  , getLine: function (line) {
+
+return this.<span class="apidocCodeKeywordSpan">getLines</span>(line, line)[0]
+
+    }
+
+  , getLineBreaks: function () {
+
+return this._lineBreaks
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.getNextTokenByType" id="apidoc.element.jade-lint.jade_file.prototype.getNextTokenByType">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getNextTokenByType
+        <span class="apidocSignatureSpan">(current, type, direction)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getNextTokenByType = function (current, type, direction) {
+
+  type = utils.createTypeArray(type)
+  direction = direction !== undefined ? direction : 'next'
+
+  var index = current._index
+    , length = this.getTokens().length
+
+  while (index &gt;= 0 &amp;&amp; index &lt; length) {
+    index = direction === 'next' ? index + 1 : index - 1
+    current = this.getToken(index)
+
+    if (current &amp;&amp; type.indexOf(current.type) !== -1) {
+      return current
+    }
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      var _this = this
+
+      _this.iterateTokensByType(typeB, function (token) {
+var current = token
+  , currentIndex = current._index
+  , start = _this.getPreviousTokenByType(token, boundaryTypes) || current
+  , startIndex = start._index
+  , end = _this.<span class="apidocCodeKeywordSpan">getNextTokenByType</span>(token, boundaryTypes)
+  , endIndex = end._index
+
+_this.iterateTokensByFilter(function (token) {
+  return typeA.indexOf(token.type) !== -1 &amp;&amp;
+    token._index &gt; currentIndex &amp;&amp;
+    token._index &gt;= startIndex &amp;&amp;
+    token._index &lt;= endIndex
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.getParseErrors" id="apidoc.element.jade-lint.jade_file.prototype.getParseErrors">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getParseErrors
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getParseErrors = function () {
+
+  return this._parseErrors
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.getPreviousTokenByType" id="apidoc.element.jade-lint.jade_file.prototype.getPreviousTokenByType">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getPreviousTokenByType
+        <span class="apidocSignatureSpan">(current, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPreviousTokenByType = function (current, type) {
+
+  return this.getNextTokenByType(current, type, 'previous')
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      typeA = utils.createTypeArray(typeA)
+
+      var _this = this
+
+      _this.iterateTokensByType(typeB, function (token) {
+var current = token
+  , currentIndex = current._index
+  , start = _this.<span class="apidocCodeKeywordSpan">getPreviousTokenByType</span>(token, boundaryTypes) || current
+  , startIndex = start._index
+  , end = _this.getNextTokenByType(token, boundaryTypes)
+  , endIndex = end._index
+
+_this.iterateTokensByFilter(function (token) {
+  return typeA.indexOf(token.type) !== -1 &amp;&amp;
+    token._index &gt; currentIndex &amp;&amp;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.getSource" id="apidoc.element.jade-lint.jade_file.prototype.getSource">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getSource
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSource = function () {
+
+  return this._source
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+Errors.prototype =
+  { add: function (message, line, column) {
+
+  this._errors.push(error(this._currentRule, message
+    , { filename: this._file.getFilename()
+      , src: this._file.<span class="apidocCodeKeywordSpan">getSource</span>().replace(/\r\n|\r/g, '\n')
+      , line: line
+      , column: column
+      }
+    ))
+
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.getSourceBetweenTokens" id="apidoc.element.jade-lint.jade_file.prototype.getSourceBetweenTokens">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getSourceBetweenTokens
+        <span class="apidocSignatureSpan">(start, end)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSourceBetweenTokens = function (start, end) {
+
+  var currentLine = start.line
+    , source = []
+    , line
+    , startIndex
+    , endIndex
+
+  while (currentLine &lt;= end.line) {
+    line = this._lines[currentLine - 1]
+
+    if (currentLine === start.line) {
+      startIndex = start.col - 1
+    } else {
+      startIndex = 0
+    }
+
+    if (currentLine === end.line) {
+      endIndex = end.col - 1
+    } else {
+      endIndex = line.length
+    }
+
+    line = line.substring(startIndex, endIndex)
+
+    source.push(line)
+    currentLine++
+  }
+
+  return source.join('\n')
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.getToken" id="apidoc.element.jade-lint.jade_file.prototype.getToken">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getToken
+        <span class="apidocSignatureSpan">(index)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getToken = function (index) {
+
+  var tokens = this.getTokens()
+
+  return (tokens &amp;&amp; tokens.length &gt; index) ? tokens[index] : null
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return this._filename
+
+    }
+
+  , getFirstToken: function () {
+
+return this.<span class="apidocCodeKeywordSpan">getToken</span>(0)
+
+    }
+
+  , getLastToken: function () {
+
+var tokens = this.getTokens()
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.getTokens" id="apidoc.element.jade-lint.jade_file.prototype.getTokens">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getTokens
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getTokens = function () {
+
+  return this._tokens.map(function (token, index) {
+    token._index = index
+    return token
+  })
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    return this.getToken(0)
+
+  }
+
+, getLastToken: function () {
+
+    var tokens = this.<span class="apidocCodeKeywordSpan">getTokens</span>()
+
+    return tokens[tokens.length - 1]
+
+  }
+
+, getLine: function (line) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.getTokensByFilter" id="apidoc.element.jade-lint.jade_file.prototype.getTokensByFilter">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>getTokensByFilter
+        <span class="apidocSignatureSpan">(filter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getTokensByFilter = function (filter) {
+
+  return this.getTokens().filter(filter)
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    return this.getTokens().filter(filter)
+
+  }
+
+, iterateTokensByFilter: function (filter, cb) {
+
+    this.<span class="apidocCodeKeywordSpan">getTokensByFilter</span>(filter).forEach(function (token) {
+      cb(token)
+    })
+
+  }
+
+, iterateTokensByType: function (type, cb) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.iterateTokensByFilter" id="apidoc.element.jade-lint.jade_file.prototype.iterateTokensByFilter">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>iterateTokensByFilter
+        <span class="apidocSignatureSpan">(filter, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">iterateTokensByFilter = function (filter, cb) {
+
+  this.getTokensByFilter(filter).forEach(function (token) {
+    cb(token)
+  })
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+JadeFile.prototype =
+
+{ addErrorForAllLinesByFilter: function (filter, regex, isMatch, errors, message) {
+
+    var _this = this
+
+    _this.<span class="apidocCodeKeywordSpan">iterateTokensByFilter</span>(filter, function (token) {
+      _this.addErrorForLine(token.line, regex, isMatch, errors, message)
+    })
+
+  }
+
+, addErrorForAllLinesByType: function (type, regex, isMatch, errors, message) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.jade_file.prototype.iterateTokensByType" id="apidoc.element.jade-lint.jade_file.prototype.iterateTokensByType">
+        function <span class="apidocSignatureSpan">jade-lint.jade_file.prototype.</span>iterateTokensByType
+        <span class="apidocSignatureSpan">(type, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">iterateTokensByType = function (type, cb) {
+
+  type = utils.createTypeArray(type)
+
+  this.iterateTokensByFilter(function (token) {
+    if (type.indexOf(token.type) !== -1) {
+      return true
+    }
+
+    return false
+  }, cb)
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      errors.add(message, token.line, token.col)
+    })
+
+  }
+
+, addErrorForAllTokensByType: function (type, errors, message) {
+
+    this.<span class="apidocCodeKeywordSpan">iterateTokensByType</span>(type, function (token) {
+      errors.add(message, token.line, token.col)
+    })
+
+  }
+
+// , addErrorForIncorrectSpacesInsideBrackets: function (brackets, token, isRequired, errors) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jade-lint.toString" id="apidoc.module.jade-lint.toString">module jade-lint.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.toString.toString" id="apidoc.element.jade-lint.toString.toString">
+        function <span class="apidocSignatureSpan">jade-lint.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+exports.getReporter = function (reporter) {
+
+var writerPath
+  , writer
+
+if (reporter) {
+  reporter = reporter.<span class="apidocCodeKeywordSpan">toString</span>()
+  writerPath = path.resolve(process.cwd(), reporter)
+
+  if (!fs.existsSync(writerPath)) {
+    writerPath = path.resolve(__dirname, './reporters/' + reporter)
+  }
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jade-lint.utils" id="apidoc.module.jade-lint.utils">module jade-lint.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.utils.createTypeArray" id="apidoc.element.jade-lint.utils.createTypeArray">
+        function <span class="apidocSignatureSpan">jade-lint.utils.</span>createTypeArray
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createTypeArray = function (type) {
+
+  if (typeof type === 'string') type = [ type ]
+  return type
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    _this.addErrorForLine(token.line, regex, isMatch, errors, message)
+  })
+
+}
+
+  , addErrorForAllLinesByType: function (type, regex, isMatch, errors, message) {
+
+  type = utils.<span class="apidocCodeKeywordSpan">createTypeArray</span>(type)
+
+  this.addErrorForAllLinesByFilter(function (token) {
+    return type.indexOf(token.type) !== -1
+  }, regex, isMatch, errors, message)
+
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.utils.ownProperty" id="apidoc.element.jade-lint.utils.ownProperty">
+        function <span class="apidocSignatureSpan">jade-lint.utils.</span>ownProperty
+        <span class="apidocSignatureSpan">(obj, propertyName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ownProperty = function (obj, propertyName) {
+
+  var properties = []
+    , property
+    , i
+
+  for (i in obj) {
+    properties.push(i)
+  }
+
+  while ((property = properties.pop())) {
+    if (property.toLowerCase() === propertyName.toLowerCase()) {
+      return obj[property]
+    }
+  }
+
+  return null
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jade-lint.utils.validateTrueOptions" id="apidoc.element.jade-lint.utils.validateTrueOptions">
+        function <span class="apidocSignatureSpan">jade-lint.utils.</span>validateTrueOptions
+        <span class="apidocSignatureSpan">(name, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateTrueOptions = function (name, options) {
+
+  assert(options === true, this.name + ' option requires a true value or should be removed')
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
