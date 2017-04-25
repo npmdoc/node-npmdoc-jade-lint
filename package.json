@@ -1,6 +1,6 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
-    "description": "api documentation for [jade-lint (v2.1.0)](https://github.com/pugjs/jade-lint#readme) [![npm package](https://img.shields.io/npm/v/npmdoc-jade-lint.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-jade-lint) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-jade-lint.svg)](https://travis-ci.org/npmdoc/node-npmdoc-jade-lint)",
+    "description": "#### basic api documentation for  [jade-lint (v2.1.0)](https://github.com/pugjs/jade-lint#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-jade-lint.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-jade-lint) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-jade-lint.svg)](https://travis-ci.org/npmdoc/node-npmdoc-jade-lint)",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "jade-lint": "*",

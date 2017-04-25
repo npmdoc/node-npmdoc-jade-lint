@@ -1,4 +1,7 @@
-# api documentation for  [jade-lint (v2.1.0)](https://github.com/pugjs/jade-lint#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-jade-lint.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-jade-lint) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-jade-lint.svg)](https://travis-ci.org/npmdoc/node-npmdoc-jade-lint)
+# npmdoc-jade-lint
+
+#### basic api documentation for  [jade-lint (v2.1.0)](https://github.com/pugjs/jade-lint#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-jade-lint.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-jade-lint) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-jade-lint.svg)](https://travis-ci.org/npmdoc/node-npmdoc-jade-lint)
+
 #### An unopinionated and configurable linter and style checker for Jade
 
 [![NPM](https://nodei.co/npm/jade-lint.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/jade-lint)
